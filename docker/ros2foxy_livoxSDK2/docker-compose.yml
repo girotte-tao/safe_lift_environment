@@ -1,0 +1,21 @@
+# Copyright (C) 2023, Jet, HKU
+# Email: zhengzj@connect.hku.hk
+
+version: '2.3'
+services:
+  ubuntu20:
+    image: cicid/hap
+    build: .
+    command: lxterminal
+    privileged: true
+    stdin_open: true
+    tty: true
+    environment:
+        - DISPLAY
+        - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    network_mode: host
+
+volumes:
+  ubuntu20:
