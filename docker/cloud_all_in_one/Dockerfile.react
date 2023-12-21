@@ -1,3 +1,5 @@
+ARG PAT
+
 # Dockerfile-React
 FROM node:latest as build
 
@@ -5,7 +7,7 @@ FROM node:latest as build
 RUN apt-get update && apt-get install -y git
 
 # 克隆您的 React 仓库
-RUN git clone https://github.com/<your-username>/<your-react-repo>.git /app
+RUN git clone https://<PAT>@github.com/<your-username>/<your-react-repo>.git /app
 
 # 设置工作目录
 WORKDIR /app

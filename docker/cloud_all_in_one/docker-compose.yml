@@ -2,8 +2,10 @@ version: '3'
 services:
   react:
     build:
-      context: ./path-to-react
-      dockerfile: Dockerfile-React
+      context: .
+      dockerfile: Dockerfile.react
+      args:
+        - PAT=${PAT}
     ports:
       - "3000:80"
     networks:
@@ -11,8 +13,10 @@ services:
 
   flask:
     build:
-      context: ./path-to-flask
-      dockerfile: Dockerfile-Flask
+      context: .
+      dockerfile: Dockerfile.flask
+      args:
+        - PAT=${PAT}
     ports:
       - "8000:8000"
     networks:
