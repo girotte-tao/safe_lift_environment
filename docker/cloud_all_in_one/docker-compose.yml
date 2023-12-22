@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile.react
       args:
         - PAT=${PAT}
-    ports:
-      - "3000:80"
+    # ports:
+    #   - "3000:80"
     networks:
       - webnet
 
@@ -17,8 +17,8 @@ services:
       dockerfile: Dockerfile.flask
       args:
         - PAT=${PAT}
-    ports:
-      - "8000:8000"
+    # ports:
+    #   - "8000:8000"
     networks:
       - webnet
 
