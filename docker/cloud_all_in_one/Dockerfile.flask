@@ -23,5 +23,8 @@ COPY . /app
 # 暴露端口
 EXPOSE 8000
 
-# 设置启动命令，使用 Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+# use Gunicorn
+# CMD ["gunicorn", "-k", "geventwebsocket.gunicorn.workers.GeventWebSocketWorker", "-w", "1", "-c", "gunicorn_config.py", "-b", "0.0.0.0:8000", "app:app"]
+
+# use eventlet
+CMD ["python", "app.py"]
